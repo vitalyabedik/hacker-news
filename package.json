@@ -10,6 +10,8 @@
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.14.0",
+    "@tanstack/react-query-devtools": "^5.14.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
