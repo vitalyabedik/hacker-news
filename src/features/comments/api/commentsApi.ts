@@ -1,5 +1,6 @@
-import { CommentsApiType } from '@/features/comments/api/commentsApi.types'
 import { baseURL } from '@/shared'
+
+import { CommentsApiType } from './commentsApi.types'
 
 export const commentsApi = {
   async getComments(id: number): Promise<CommentsApiType> {
