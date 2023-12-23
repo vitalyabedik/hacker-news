@@ -13,11 +13,16 @@ export const newsApi = {
 
     return await res.json()
   },
-  async getNewsItems(newsIds: number[], newsCount: number = 100): Promise<NewsItemType[]> {
-    const getNews = newsIds.slice(0, newsCount).map(async newsId => {
-      return await newsApi.getNewsItem(newsId)
-    })
+  async getNewsItems(pageParam: number, newsCount: number): Promise<NewsItemType[]> {
+    const newsIds = await newsApi.getNewsIDs()
+    const startIndex = pageParam
+    const endIndex = pageParam + newsCount
 
-    return await Promise.all(getNews)
+    const getNewsPromises = newsIds
+      .slice(startIndex, endIndex)
+      .map(newsId => newsApi.getNewsItem(newsId))
+    const newsItems = await Promise.all(getNewsPromises)
+
+    return newsItems
   },
 }
