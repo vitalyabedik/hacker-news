@@ -20,7 +20,7 @@ const News: React.FC = () => {
         updateDataCallback={updateNewsCallback}
       />
       {!isUpdatedNews && <NewsList />}
-      {isUpdatedNews && <Preloader />}
+      {isUpdatedNews && <Preloader isFullScreen />}
     </PageWrapper>
   )
 }
