@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { NewsItemType } from '@/features'
-import { InfoBlockItem, PostInfo } from '@/shared'
+import { PostInfo, Rating } from '@/shared'
 import Link from 'next/link'
 
 type Props = {
@@ -22,7 +22,7 @@ export const NewsItem: React.FC<Props> = ({ item }) => {
               'p-3 text-xl font-semibold rounded-md flex gap-1 items-center justify-center text-center'
             }
           >
-            <InfoBlockItem icon={'star'} iconSize={16} isReversed text={item?.score} />
+            <Rating icon={'star'} text={item?.score} />
           </div>
           <div>
             <p className={'font-semibold text-md md:truncate'}>{item?.title}</p>
