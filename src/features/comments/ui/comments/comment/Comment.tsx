@@ -3,6 +3,7 @@ import React, { memo } from 'react'
 
 import { CommentsApiType } from '@/features'
 import { PostInfo } from '@/shared'
+import he from 'he'
 
 type Props = {
   comments: CommentsApiType
@@ -11,10 +12,12 @@ type Props = {
 }
 
 export const Comment: React.FC<Props> = memo(({ comments, showMore, showMoreComments }) => {
+  const decodedText = comments?.text ? he.decode(comments.text) : ''
+
   return (
     <div className={'max-w-lg mt-8 p-4 bg-gray-800 overflow-hidden shadow rounded-2xl'}>
-      {comments && <PostInfo item={comments} variant={'default'} />}
-      <div className={'mt-4'}>{comments?.text}</div>
+      {comments && <PostInfo item={comments} variant={'comments'} />}
+      <div className={'mt-4'}>{decodedText}</div>
       {comments?.kids && (
         <button
           className={
@@ -22,7 +25,7 @@ export const Comment: React.FC<Props> = memo(({ comments, showMore, showMoreComm
           }
           onClick={showMoreComments}
         >
-          {!showMore ? 'Show more comments' : 'Hide comments'}
+          {!showMore ? `Show more comments` : 'Hide comments'}
         </button>
       )}
     </div>

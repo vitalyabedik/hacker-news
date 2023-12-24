@@ -11,6 +11,12 @@ dependencies:
   '@tanstack/react-query-devtools':
     specifier: ^5.14.0
     version: 5.14.0(@tanstack/react-query@5.14.0)(react@18.2.0)
+  '@types/he':
+    specifier: ^1.2.3
+    version: 1.2.3
+  he:
+    specifier: ^1.2.0
+    version: 1.2.0
   next:
     specifier: 14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -436,6 +442,10 @@ packages:
     dependencies:
       '@tanstack/query-core': 5.14.0
       react: 18.2.0
+    dev: false
+
+  /@types/he@1.2.3:
+    resolution: {integrity: sha512-q67/qwlxblDzEDvzHhVkwc1gzVWxaNxeyHUBF4xElrvjL11O+Ytze+1fGpBHlr/H9myiBUaUXNnNPmBHxxfAcA==}
     dev: false
 
   /@types/json-schema@7.0.15:
@@ -2003,6 +2013,11 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
+
+  /he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
+    dev: false
 
   /hosted-git-info@4.1.0:
     resolution: {integrity: sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA==}
