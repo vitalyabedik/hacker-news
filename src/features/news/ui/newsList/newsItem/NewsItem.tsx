@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { NewsItemType } from '@/features'
-import { formatDate, formatTime } from '@/shared'
-import Image from 'next/image'
+import { InfoBlockItem, formatDate, formatTime } from '@/shared'
 import Link from 'next/link'
 
 type Props = {
@@ -26,25 +25,15 @@ export const NewsItem: React.FC<Props> = ({ item }) => {
               'p-3 text-xl font-semibold rounded-md flex gap-1 items-center justify-center text-center'
             }
           >
-            <div>{item?.score}</div>
-            <Image alt={'star icon'} height={16} src={'/star.svg'} width={16} />
+            <InfoBlockItem icon={'star'} iconSize={16} isReversed text={item?.score} />
           </div>
           <div>
             <p className={'font-semibold text-md md:truncate'}>{item?.title}</p>
             <div className={'mt-2 sm:flex sm:justify-between'}>
               <div className={'flex gap-4 flex-wrap'}>
-                <div className={'flex gap-1 items-center'}>
-                  <Image alt={'author icon'} height={16} src={'/author.svg'} width={16} />
-                  <span className={'flex items-center text-md'}>{item?.by}</span>
-                </div>
-                <div className={'flex gap-1 items-center'}>
-                  <Image alt={'calendar icon'} height={16} src={'/calendar.svg'} width={16} />
-                  <span className={'flex items-center font-light text-md'}>{formatedDate}</span>
-                </div>
-                <div className={'flex gap-1 items-center'}>
-                  <Image alt={'clock icon'} height={16} src={'/clock.svg'} width={16} />
-                  <span className={'flex items-center font-light text-md'}>{formatedTime}</span>
-                </div>
+                <InfoBlockItem icon={'author'} iconSize={16} text={item?.by} />
+                <InfoBlockItem icon={'calendar'} iconSize={16} text={formatedDate} />
+                <InfoBlockItem icon={'clock'} iconSize={16} text={formatedTime} />
               </div>
             </div>
           </div>
