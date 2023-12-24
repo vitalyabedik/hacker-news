@@ -9,7 +9,11 @@ type Props = {
 
 export const Rating: React.FC<Props> = memo(({ icon, text }) => {
   return (
-    <div className={`flex gap-1 items-center`}>
+    <div
+      className={
+        'w-20 p-3 text-xl font-semibold rounded-md flex gap-1 items-center justify-center text-center'
+      }
+    >
       <span className={`flex items-center text-md`}>{text}</span>
       <Image alt={`${icon}-icon`} height={16} src={`/${icon}.svg`} width={16} />
     </div>
