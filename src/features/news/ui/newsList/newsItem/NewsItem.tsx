@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { NewsItemType } from '@/features'
-import { InfoBlockItem, formatDate, formatTime } from '@/shared'
+import { InfoBlockItem, PostInfo } from '@/shared'
 import Link from 'next/link'
 
 type Props = {
@@ -9,9 +9,6 @@ type Props = {
 }
 
 export const NewsItem: React.FC<Props> = ({ item }) => {
-  const formatedDate = formatDate(item?.time ?? '')
-  const formatedTime = formatTime(item?.time ?? '')
-
   return (
     <li>
       <Link className={'block'} href={`/news/${item?.id}`}>
@@ -30,11 +27,7 @@ export const NewsItem: React.FC<Props> = ({ item }) => {
           <div>
             <p className={'font-semibold text-md md:truncate'}>{item?.title}</p>
             <div className={'mt-2 sm:flex sm:justify-between'}>
-              <div className={'flex gap-4 flex-wrap'}>
-                <InfoBlockItem icon={'author'} iconSize={16} text={item?.by} />
-                <InfoBlockItem icon={'calendar'} iconSize={16} text={formatedDate} />
-                <InfoBlockItem icon={'clock'} iconSize={16} text={formatedTime} />
-              </div>
+              <PostInfo item={item} variant={'default'} />
             </div>
           </div>
         </article>
