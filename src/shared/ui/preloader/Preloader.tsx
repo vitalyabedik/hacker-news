@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 type VariantType = 'default' | 'small'
 
@@ -7,7 +7,7 @@ type Props = {
   variant?: VariantType
 }
 
-export const Preloader: React.FC<Props> = ({ isFullScreen = true, variant = 'default' }) => {
+export const Preloader: React.FC<Props> = memo(({ isFullScreen = true, variant = 'default' }) => {
   const preloaderSize = variant === 'default' ? '40' : '20'
   const isFullScreenHeight = isFullScreen ? 'h-screen' : 'mt-16'
   const hasMarginTop = variant === 'small' ? 'mt-8' : ''
@@ -19,4 +19,4 @@ export const Preloader: React.FC<Props> = ({ isFullScreen = true, variant = 'def
       ></div>
     </div>
   )
-}
+})

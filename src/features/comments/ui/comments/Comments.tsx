@@ -1,8 +1,7 @@
 'use client'
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo } from 'react'
 
 import { useQueryComments } from '@/features'
-import { Preloader } from '@/shared'
 
 import { Comment } from './comment'
 
@@ -11,8 +10,7 @@ type Props = {
 }
 
 export const Comments: React.FC<Props> = memo(({ item }) => {
-  const { comments, isSuccess, loadingStatus, onShowMoreCallback, setShowMore, showMore } =
-    useQueryComments(item)
+  const { comments, loadingStatus, onShowMoreCallback, showMore } = useQueryComments(item)
 
   return (
     <>

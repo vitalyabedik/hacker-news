@@ -13,8 +13,8 @@ type Props = {
 export const Comment: React.FC<Props> = memo(({ comments, showMore, showMoreComments }) => {
   return (
     <div className={'max-w-lg mt-8 p-4 bg-gray-800 overflow-hidden shadow rounded-2xl'}>
-      {comments && <PostInfo item={comments} variant={'comment'} />}
-      <div>{comments?.text}</div>
+      {comments && <PostInfo item={comments} variant={'default'} />}
+      <div className={'mt-4'}>{comments?.text}</div>
       {comments?.kids && (
         <button
           className={
