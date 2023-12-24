@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { Comments, NewsItemType, useQueryComments } from '@/features'
 import { GoBack, PagePanel, PostInfo, Preloader } from '@/shared'
@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const NewsDetails: React.FC<Props> = ({ item }) => {
-  const { isSuccess, loadingStatus, updateCommentsCallback } = useQueryComments(item)
+  const { loadingStatus, updateCommentsCallback } = useQueryComments(item.id)
 
   return (
     <>
@@ -31,7 +31,7 @@ export const NewsDetails: React.FC<Props> = ({ item }) => {
               <PagePanel
                 buttonText={'Update comments'}
                 loadingStatus={loadingStatus}
-                titleText={`Total comments: ${item?.kids ? item?.kids?.length : 0}`}
+                titleText={`Comments`}
                 updateDataCallback={updateCommentsCallback}
               />
               {item?.kids && item?.kids.map(comment => <Comments item={comment} key={comment} />)}

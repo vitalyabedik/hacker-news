@@ -12,7 +12,7 @@ type Props = {
 export const PagePanel: React.FC<Props> = memo(
   ({ buttonText, loadingStatus, titleText, updateDataCallback }) => {
     return (
-      <div className={'flex max-w-lg gap-8 mt-8'}>
+      <div className={'flex flex-wrap justify-start gap-4 mt-8'}>
         <h1 className={'text-3xl font-semibold'}>{titleText}</h1>
         <button
           className={`flex items-center gap-2 py-2 px-4 ${

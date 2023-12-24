@@ -13,7 +13,6 @@ export const useQueryNews = () => {
 
   const {
     data: news,
-    error,
     fetchNextPage,
     fetchPreviousPage,
     hasNextPage,
@@ -63,7 +62,6 @@ export const useQueryNews = () => {
 
   return {
     dataStatus,
-    error,
     fetchNextPage,
     fetchPreviousPage,
     hasNextPage,

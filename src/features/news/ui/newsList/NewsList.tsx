@@ -13,7 +13,7 @@ export const NewsList: React.FC = () => {
     <section>
       <ul
         className={
-          'mx-auto max-w-screen-xl mt-8 grid gap-4 lg:grid-cols-1 overflow-hidden bg-gray-800 shadow rounded-2xl'
+          'mx-auto max-w-screen-xl mt-8 grid overflow-hidden bg-gray-800 shadow rounded-2xl'
         }
       >
         {news?.pages?.map(
