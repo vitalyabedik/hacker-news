@@ -16,7 +16,6 @@ export const NewsItem: React.FC<Props> = ({ item }) => {
           className={'flex gap-6 items-center px-4 py-4 hover:bg-gray-700 transition duration-300'}
         >
           <Rating icon={'star'} text={item?.score} />
-
           <div>
             <p className={'font-semibold text-md md:truncate'}>{item?.title}</p>
             <div className={'mt-2 sm:flex sm:justify-between'}>

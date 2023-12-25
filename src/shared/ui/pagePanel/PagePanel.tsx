@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 
+import { CustomButton } from '@/shared'
 import Image from 'next/image'
 
 type Props = {
@@ -14,25 +15,16 @@ export const PagePanel: React.FC<Props> = memo(
     return (
       <div className={'flex flex-wrap justify-start gap-4 mt-8'}>
         <h1 className={'text-3xl font-semibold'}>{titleText}</h1>
-        <button
-          className={`flex items-center gap-2 py-2 px-4 ${
-            loadingStatus ? 'bg-gray-600' : 'bg-indigo-600'
-          } ${
-            !loadingStatus && 'hover:bg-indigo-700'
-          } text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md rounded-lg`}
-          disabled={loadingStatus}
-          onClick={updateDataCallback}
-          type={'button'}
-        >
+        <CustomButton callback={updateDataCallback} disabled={loadingStatus}>
           <Image
-            alt={'update icon'}
+            alt={'update-icon'}
             className={`${loadingStatus && 'animate-spin'}`}
             height={16}
             src={'/update.svg'}
             width={16}
           />
-          {buttonText}
-        </button>
+          <span>{buttonText}</span>
+        </CustomButton>
       </div>
     )
   }

@@ -19,14 +19,14 @@ export const Comment: React.FC<Props> = memo(({ comments, showMore, showMoreComm
       {comments && <PostInfo item={comments} variant={'comments'} />}
       <div className={'mt-4'}>{decodedText}</div>
       {comments?.kids && (
-        <button
+        <div
           className={
-            'flex justify-start mt-2 text-md hover:text-indigo-700 text-indigo-600 transition ease-in duration-200 text-center text-base font-semibold'
+            'flex justify-start mt-2 text-md hover:text-indigo-700 text-indigo-600 transition ease-in duration-200 text-center text-base font-semibold cursor-pointer'
           }
           onClick={showMoreComments}
         >
           {!showMore ? `Show more comments` : 'Hide comments'}
-        </button>
+        </div>
       )}
     </div>
   )
