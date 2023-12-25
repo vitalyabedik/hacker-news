@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
           <div className={'w-40 text-white hover:opacity-60'}>
             <Link className={'flex gap-4 h-16 items-center'} href={'/'}>
               <div className={'flex py-1 px-2 border-2'}>Y</div>
-              <div className={'text-xl tracking-tight'}>Hacker News</div>
+              <h2 className={'text-xl tracking-tight'}>Hacker News</h2>
             </Link>
           </div>
         </div>

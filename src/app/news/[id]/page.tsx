@@ -21,11 +21,9 @@ const NewsItem = async ({ params: { id } }: { params: ParamsType }) => {
     <PageWrapper>
       {newsItem && (
         <section className={'relative mt-32 mx-auto max-w-screen-xl'}>
-          <div className={'flex-col'}>
-            <h1 className={'max-w-screen-md mb-4 text-2xl sm:text-4xl font-semibold'}>
-              {newsItem?.title}
-            </h1>
-          </div>
+          <h1 className={'max-w-screen-md mb-4 text-2xl sm:text-4xl font-semibold'}>
+            {newsItem?.title}
+          </h1>
           <NewsDetails item={newsItem} />
         </section>
       )}
