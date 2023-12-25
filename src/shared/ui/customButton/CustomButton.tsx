@@ -15,7 +15,7 @@ export const CustomButton: React.FC<Props> = ({ callback, children, disabled }) 
 
   return (
     <button
-      className={`flex items-center gap-2 py-2 px-4 ${isDisabled} text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md rounded-lg`}
+      className={`flex items-center gap-2 py-2 px-4 ${isDisabled} text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg focus:ring-indigo-500 focus:ring-offset-indigo-200`}
       disabled={disabled}
       onClick={onClickHandler}
     >

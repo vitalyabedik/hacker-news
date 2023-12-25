@@ -3,14 +3,18 @@ import React from 'react'
 import { NewsDetails, newsApi } from '@/features'
 import { PageWrapper } from '@/shared'
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+type ParamsType = {
+  id: string
+}
+
+export async function generateMetadata({ params }: { params: ParamsType }) {
   return {
     description: 'News item',
     title: params.id,
   }
 }
 
-const NewsItem = async ({ params: { id } }: { params: { id: string } }) => {
+const NewsItem = async ({ params: { id } }: { params: ParamsType }) => {
   const newsItem = await newsApi.getNewsItem(+id)
 
   return (
