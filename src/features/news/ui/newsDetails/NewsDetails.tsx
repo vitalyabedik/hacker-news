@@ -2,8 +2,7 @@
 import React from 'react'
 
 import { Comments, NewsItemType, useQueryComments } from '@/features'
-import { GoBack, PagePanel, PostInfo, Preloader } from '@/shared'
-import Link from 'next/link'
+import { CustomLink, GoBack, PagePanel, PostInfo, Preloader } from '@/shared'
 
 type Props = {
   item: NewsItemType
@@ -17,15 +16,7 @@ export const NewsDetails: React.FC<Props> = ({ item }) => {
       <article>
         <div className={'mt-4 flex-col items-start gap-4'}>
           <PostInfo item={item} />
-          <Link
-            className={
-              'text-xl hover:text-indigo-700 text-indigo-600 transition ease-in duration-200 text-center text-base font-semibold'
-            }
-            href={item?.url ?? ''}
-            target={'_blank'}
-          >
-            Read article
-          </Link>
+          <CustomLink href={item?.url ?? ''} target={'_blank'} text={'Read article'} />
           {!loadingStatus && (
             <>
               <PagePanel
