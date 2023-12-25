@@ -13,7 +13,7 @@ export const NewsItem: React.FC<Props> = ({ item }) => {
     <li>
       <Link className={'block'} href={`/news/${item?.id}`}>
         <article
-          className={'flex items-center px-4 py-4 hover:bg-gray-700 transition duration-300'}
+          className={'flex gap-6 items-center px-4 py-4 hover:bg-gray-700 transition duration-300'}
         >
           <Rating icon={'star'} text={item?.score} />
 
